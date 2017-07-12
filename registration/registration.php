@@ -52,6 +52,7 @@ function saveDataJSON($filename, $name, $email, $phone){
         $arr_data = json_decode($jsondata, true);
         array_push($arr_data, JSON_PRETTY_PRINT);
         file_put_contents($filename, $jsondata);
+        return true;
     }catch(Exception $e){
         echo "Lỗi: " , $e->getMessage(), "\n";
         return false;
