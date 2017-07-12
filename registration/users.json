@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "name": "asdfads",
+        "email": "john.doe@example.com",
+        "phone": "dasadsas"
+    },
+    {
+        "name": "vdffgdfg",
+        "email": "abc@gmail.com",
+        "phone": "213412421"
+    },
+    {
+        "name": "nguy\u1ec5n th\u1eafng",
+        "email": "matmeomo@gmail.com",
+        "phone": "123456"
+    }
+]

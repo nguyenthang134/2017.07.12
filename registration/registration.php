@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($flag == true){
         if(saveDataJSON("users.json", $name, $email, $phone)){
-            echo "save successfull!!";
+            echo "save successfull!";
         }
         else{
             echo "fail!!";
@@ -50,8 +50,14 @@ function saveDataJSON($filename, $name, $email, $phone){
         );
         $jsondata = file_get_contents($filename);
         $arr_data = json_decode($jsondata, true);
-        array_push($arr_data, JSON_PRETTY_PRINT);
+        array_push($arr_data, $contact);
+        $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
         file_put_contents($filename, $jsondata);
+//        foreach ($arr_data as $value){
+//            echo $value['name'];
+//            echo $value['email'];
+//            echo $value['phone'];
+//        }
         return true;
     }catch(Exception $e){
         echo "Lỗi: " , $e->getMessage(), "\n";
